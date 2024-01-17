@@ -1,5 +1,5 @@
 import { unstable_cache as cache } from 'next/cache'
-import { getAboutMe } from '@/firestore/collections/profile'
+import { getAboutMe } from '@/firestore/features/profile'
 import { ABOUT_ME } from '@/constants/cache/profile'
 
 const getAboutMeCached = cache(async () => getAboutMe(), [ABOUT_ME.CACHE_KEY], {
@@ -12,8 +12,8 @@ export default async function AboutMe() {
   } = await getAboutMeCached()
 
   return (
-    <div className="lg:row-span-1 ring-1 dark:ring-white/10 ring-primary/5 dark:bg-secondary shadow-xl dark:shadow-thick rounded-3xl p-8">
-      <div className="relative flex items-center gap-x-4">
+    <div className="relative">
+      <div className="flex items-center gap-x-4">
         <div className="text-sm leading-6">
           <p className="font-semibold text-primary dark:text-white">
             <a href="#">

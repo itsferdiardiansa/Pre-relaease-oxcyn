@@ -1,5 +1,5 @@
 import { unstable_cache as cache } from 'next/cache'
-import { getSpeaksHighlighted } from '@/firestore/collections/profile'
+import { getSpeaksHighlighted } from '@/firestore/features/profile'
 import { SPEAKS_HIGHLIGHTED } from '@/constants/cache/profile'
 
 const getSpeaksHighlightedCached = cache(

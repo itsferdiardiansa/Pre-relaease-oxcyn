@@ -1,5 +1,5 @@
 import { unstable_cache as cache } from 'next/cache'
-import { getSocials } from '@/firestore/collections/contact'
+import { getSocials } from '@/firestore/features/contact'
 import { SOCIALS } from '@/constants/cache/contact'
 
 import GithubIcon from '@/assets/svg/socials/github.svg'

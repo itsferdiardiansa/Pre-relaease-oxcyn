@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 import { Metadata } from 'next'
 import { unstable_cache as cache } from 'next/cache'
-import { getBaseMetadata } from '@/firestore/collections/metadata'
+import { getBaseMetadata } from '@/firestore/features/metadata'
 import { BASE_METADATA } from '@/constants/cache/metadata'
 import ThemeProvider from '@/context/theme/theme.provider'
 import ThemeSwitcher from '@/components/layouts/theme-switcher/ThemeSwitcher'
