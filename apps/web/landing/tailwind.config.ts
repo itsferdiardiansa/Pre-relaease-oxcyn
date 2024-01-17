@@ -98,10 +98,10 @@ const config: Config = {
         secondary: '#1a1a1a',
         tertiary: '#262626',
         // Purple
-        //primary:"#080118",
-        //secondary:"#140d23",
-        //tertiary:"#1d1333",
-        white: '#ececec',
+        // primary:"#080118",
+        // secondary:"#140d23",
+        // tertiary:"#1d1333",
+        // white: '#ececec',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -113,6 +113,7 @@ const config: Config = {
       },
     },
   },
+  darkMode: 'class',
   plugins: [
     require('@tailwindcss/typography'),
     // ...

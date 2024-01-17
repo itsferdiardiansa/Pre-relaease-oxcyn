@@ -1,8 +1,11 @@
 import { PropsWithChildren } from 'react'
-import { Metadata, Viewport } from 'next'
+import { Metadata } from 'next'
 import { unstable_cache as cache } from 'next/cache'
 import { getBaseMetadata } from '@/firestore/collections/metadata'
 import { BASE_METADATA } from '@/constants/cache/metadata'
+import ThemeProvider from '@/context/theme/theme.provider'
+import ThemeSwitcher from '@/components/layouts/theme-switcher/ThemeSwitcher'
+import { cn } from '@oxcyn/utils'
 
 import './globals.css'
 
@@ -12,10 +15,6 @@ const getBaseMetadataCached = cache(
   { tags: [...BASE_METADATA.CACHE_TAGS] }
 )
 
-export const viewport: Viewport = {
-  themeColor: '#1b1d20',
-}
-
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await getBaseMetadataCached()
 
@@ -24,8 +23,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
-      <body className="dark:bg-primary bg-zinc-200">{children}</body>
+    <html lang="en" className={cn('antialiased')} suppressHydrationWarning>
+      <body className={cn('bg-slate-100 dark:bg-secondary')}>
+        <ThemeProvider defaultTheme="dark">
+          <ThemeSwitcher />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
