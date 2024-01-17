@@ -2,11 +2,14 @@
   "extends": "@oxcyn/ts-config/base.json",
   "compilerOptions": {
     "importHelpers": false,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "ES2017"],
     "outDir": "dist",
     "rootDir": "src"
   },
+  "include": ["src/**/*.ts"],
   "exclude": [
-    "dist",
-    "src/**/index.ts"
+    "dist"
   ]
 }
